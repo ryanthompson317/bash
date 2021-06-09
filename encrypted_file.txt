@@ -1,0 +1,2 @@
+hello there!
+This is a secret message that should be encrypted

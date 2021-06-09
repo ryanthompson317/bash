@@ -1,0 +1,2 @@
+# Password for encrypt and decrypt
+greatPassword42!
