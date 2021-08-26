@@ -150,6 +150,13 @@ $ wikit "machine learning"
 ![wikit machine learning](wikit.png)
 &nbsp;  
 &nbsp;   
+
+### **Battery Status**
+```sh
+$ acpi -b
+Battery 0: Discharging, 16%, 00:27:07 remaining
+```
+
 ### **next bash tool**
 ```console
 $ [insert next bash tool] # placeholder
@@ -167,11 +174,3 @@ Not md-bash
     ```
 $ Do something
 ```
-&nbsp;  
-&nbsp;  
-&nbsp;  
-&nbsp;  
-&nbsp;     
-*\*This repo may end up merging with OS repo\**
-
-
