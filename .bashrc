@@ -156,6 +156,9 @@ alias no="xinput set-button-map 14 1 0 3 4 5 6 7"
 #   $ border [off/on] [left/right] [top/bottom]
 alias border="python ~/python/border_control.py"
 
+# run matlab in current directory.
+alias matlab="matlab . &"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
