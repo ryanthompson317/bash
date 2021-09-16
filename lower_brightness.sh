@@ -1,0 +1,1 @@
+redshift -O 7000k -b 0.9
