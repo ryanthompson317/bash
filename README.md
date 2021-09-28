@@ -149,14 +149,22 @@ $ wikit "machine learning"
 *wikit machine learning output*
 ![wikit machine learning](wikit.png)
 &nbsp;  
-&nbsp;   
 
 ### **Battery Status**
 ```sh
 $ acpi -b
 Battery 0: Discharging, 16%, 00:27:07 remaining
 ```
-
+&nbsp;  
+### **Fuzzy Finder Search**
+```sh
+$ sudo apt -y install fzf
+```
+![fuzzy search tool](fzf.png)
+&nbsp;  
+*Searching for mcrypt encrypted files within this bash repo*
+&nbsp;  
+&nbsp;  
 ### **next bash tool**
 ```console
 $ [insert next bash tool] # placeholder
