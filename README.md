@@ -165,6 +165,9 @@ $ sudo apt -y install fzf
 *Searching for mcrypt encrypted files within this bash repo*
 &nbsp;  
 &nbsp;  
+### **Terminal Search**
+```$ conda install googler ```
+
 ### **next bash tool**
 ```console
 $ [insert next bash tool] # placeholder
