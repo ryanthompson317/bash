@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -93,76 +92,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Path for python conda
-# export PATH="/home/bob/anaconda3/bin:$PATH"  # commented out by conda initialize
-
-# Added aliases
-alias brave="nohup brave-browser&>/dev/null &"
-alias google-chrome="nohup google-chrome&>/dev/null &"
-alias python="python3"
-alias new="clear && cd ~"
-alias onyx="ssh -Y ryanthompson317@onyx.boisestate.edu"
-alias update="
-    sudo apt update
-    sudo apt -y upgrade
-    sudo apt -y autoremove
-    conda update conda --all --yes
-    conda update anaconda --all --yes
-    snap refresh --list
-    echo
-    fortune | lolcat
-    echo"
-alias tetris="petris"
-alias sysinfo="screenfetch"
-alias eclipse="nohup eclipse&>/dev/null &"
-alias vmplayer="nohup vmplayer&>/dev/null &"
-alias goodnight="
-	espeak 'Goodnight Ryan'
-	systemctl suspend
-"
-alias bedtime="systemctl suspend"
-
-# Switch git profile
-alias gitbsu='
-    git config --global user.email "ryanthompson317@u.boisestate.edu"
-    git config --global user.name "ryanthompson317"
-    git config --list'
-alias githome='
-    git config --global user.email "rt0112358@gmail.com"
-    git config --global user.name "rt0112358"
-    git config --list'
-
-# Remove unpushed git commit
-alias gitreset="git reset --soft HEAD~1"
-
-# Jflap.org
-alias jflap="nohup java -jar ~/TheoryOfComp/JFLAP7.1.jar&>/dev/null &"
-
-alias sshpi="ssh pi@billbobpie.ddns.net"
-alias make_gif="gifex"
-
-#TODO: Create function for all nohup aliases
-
-# Change java version
-alias changeJava="
-    sudo update-alternatives --config java
-    java -version"
-
-# Disables the middle button on the touchpad
-alias no="xinput set-button-map 14 1 0 3 4 5 6 7"
-
-# Border Control
-# Usage:
-#   $ border [off/on] [left/right] [top/bottom]
-alias border="python ~/python/border_control.py"
-
-# run matlab in current directory.
-alias matlab="matlab . &"
-
-alias gitpw='mcrypt --decrypt ~/bash/git_psswrd.txt.nc && cat ~/bash/git_psswrd.txt | xclip -selection clipboard && rm ~/bash/git_psswrd.txt'
-alias darken="redshift -O 7000k -b 0.9"
-alias lighten="redshift -x"
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -187,6 +116,44 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/bob/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/bob/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/bob/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/bob/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+conda deactivate
+
+# Added aliases
+alias brave="nohup brave-browser&>/dev/null &"
+alias google-chrome="nohup google-chrome&>/dev/null &"
+alias python="python3.8"
+alias new="clear && cd ~"
+alias update="
+    sudo apt update
+    sudo apt -y upgrade
+    sudo apt -y autoremove
+    conda update conda --all --yes
+    conda update anaconda --all --yes"
+alias sysinfo="screenfetch"
+alias fortune="fortune | lolcat"
+alias gitpw="mcrypt --decrypt /home/bob/bash/git_psswrd.txt.nc && cat /home/bob/bash/git_psswrd.txt | xclip -selection clipboard && rm /home/bob/bash/git_psswrd.txt"
+alias matlab="
+    echo matlab .
+    matlab . &"
+alias darken="redshift -O 6500k -b 0.9"
+alias lighten="redshift -x"
+alias gitreset="git reset --soft HEAD~1"
+#alias ls="ls -1"
+
 # Display global bin variable/alias help
 function alias_help() {
     echo "cd <alias_file_name> /usr/local/bin/";
@@ -203,18 +170,17 @@ function viewpdf() {
      nohup google-chrome *.pdf&>/dev/null &
  }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/bob/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/bob/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/bob/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/bob/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
+# # Change java version
+# alias changeJava="
+#     sudo update-alternatives --config java
+#     java -version"
+
+# Disables the middle button on the touchpad
+alias no="xinput set-button-map 18 1 0 3 4 5 6 7"
+
+export PATH="/usr/local/cuda-11.4/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

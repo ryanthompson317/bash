@@ -17,6 +17,7 @@ all:
 
 push:
 	#@githome 
+	@gitpw
 	@git status
 	@git add .
 	git commit -m "$(msg)"
