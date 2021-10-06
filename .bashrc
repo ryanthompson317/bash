@@ -155,8 +155,9 @@ alias gitreset="git reset --soft HEAD~1"
 #alias ls="ls -1"
 
 # Display global bin variable/alias help
+# alias_plain_file_name is a plain text file without a file extension
 function alias_help() {
-    echo "cd <alias_file_name> /usr/local/bin/";
+    echo "cp <alias_plain_file_name> /usr/local/bin/";
     echo "chmod +x <alias_file_name>";
 }
 

@@ -1,0 +1,1 @@
+mcrypt --decrypt /home/bob/bash/git_psswrd.txt.nc && cat /home/bob/bash/git_psswrd.txt | xclip -selection clipboard && rm /home/bob/bash/git_psswrd.txt
