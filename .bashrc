@@ -135,6 +135,8 @@ conda deactivate
 # Added aliases
 alias brave="nohup brave-browser&>/dev/null &"
 alias google-chrome="nohup google-chrome&>/dev/null &"
+alias vivaldi="nohup vivaldi&>/dev/null &"
+
 alias python="python3.8"
 alias new="clear && cd ~"
 alias update="
