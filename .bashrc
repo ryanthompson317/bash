@@ -140,6 +140,9 @@ alias vivaldi="nohup vivaldi&>/dev/null &"
 alias python="python3.8"
 alias new="clear && cd ~"
 alias update="
+    cd ~/rtw89
+    git pull
+    cd ~
     sudo apt update
     sudo apt -y upgrade
     sudo apt -y autoremove
