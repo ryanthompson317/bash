@@ -157,7 +157,16 @@ alias matlab="
 alias darken="redshift -O 6500k -b 0.9"
 alias lighten="redshift -x"
 alias gitreset="git reset --soft HEAD~1"
-#alias ls="ls -1"
+
+# function cd() {
+#     if [ "$1" = "knee-mesher/" ] ; then
+#         shift
+#         command cd "~/knee-mesher/"
+#         conda activate knee-mesher
+#     else
+#         command cd "$@"
+#     fi
+# }
 
 # Display global bin variable/alias help
 # alias_plain_file_name is a plain text file without a file extension
@@ -169,12 +178,12 @@ function alias_help() {
 # View a given pdf file
 function viewpdf() {
     nohup google-chrome $1&>/dev/null &
- }
+}
 
 # View all pdf files in the current directory
- function allpdf() {
+function allpdf() {
      nohup google-chrome *.pdf&>/dev/null &
- }
+}
 
 
 # # Change java version
