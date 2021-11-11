@@ -1,0 +1,6 @@
+gitpw
+git status
+git add .
+git commit --no-verify
+git status
+git push
