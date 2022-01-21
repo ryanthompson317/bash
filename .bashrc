@@ -159,15 +159,10 @@ alias darken="redshift -O 6500k -b 0.9"
 alias lighten="redshift -x"
 alias gitreset="git reset --soft HEAD~1"
 
-# function cd() {
-#     if [ "$1" = "knee-mesher/" ] ; then
-#         shift
-#         command cd "~/knee-mesher/"
-#         conda activate knee-mesher
-#     else
-#         command cd "$@"
-#     fi
-# }
+# Work-around fix for tensorflow numa node error/warning.
+function numa_node_fix() {
+    for a in /sys/bus/pci/devices/*; do echo 0 | sudo tee -a $a/numa_node; done
+}
 
 # Display global bin variable/alias help
 # alias_plain_file_name is a plain text file without a file extension
@@ -186,18 +181,17 @@ function allpdf() {
      nohup google-chrome *.pdf&>/dev/null &
 }
 
-
-# # Change java version
-# alias changeJava="
-#     sudo update-alternatives --config java
-#     java -version"
-
 # Disables the middle button on the touchpad
-alias no="xinput set-button-map 18 1 0 3 4 5 6 7"
+function nope() {
+    touchpad_id=$(xinput | grep Touchpad | grep -wo "id=[0-9][0-9]" | grep -Eo '[0-9]{1,4}');
+    xinput set-button-map $touchpad_id 1 0 3 4 5 6 7;
+}
 
 export PATH="/usr/local/cuda-11.4/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Allows gpu memory expansion when using tensorflow keras
 export TF_GPU_ALLOCATOR="cuda_malloc_async"
