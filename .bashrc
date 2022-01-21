@@ -136,6 +136,7 @@ conda deactivate
 alias brave="nohup brave-browser&>/dev/null &"
 alias google-chrome="nohup google-chrome&>/dev/null &"
 alias vivaldi="nohup vivaldi&>/dev/null &"
+alias zoom="nohup zoom&>/dev/null &"
 
 alias python="python3.8"
 alias new="clear && cd ~"
@@ -199,3 +200,4 @@ export LD_LIBRARY_PATH="/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export TF_GPU_ALLOCATOR="cuda_malloc_async"
